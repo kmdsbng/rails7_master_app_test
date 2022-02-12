@@ -1,0 +1,32 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 "title is-4">Countries</h1>
+
+<table class="table" id="countries">
+  <tr>
+    <th>
+      Name
+    </th>
+    <th>
+      Name En
+    </th>
+    <th>
+    </th>
+  </tr>
+  <% @countries.each do |country| %>
+    <tr>
+      <td>
+        <%= country.name %>
+      </td>
+
+      <td>
+        <%= country.name_en %>
+      </td>
+      <td>
+        <%= link_to "Edit this country", edit_country_path(country), class: "button" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to "New country", new_country_path, class: "button" %>
